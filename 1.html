@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+    <h2> Exercise 1 </h2>
+    <div class="btn-group" role="group">
+        <button class="btn btn-info btn-lg" onclick="window.location.href='index.html'" role="button">Back</button>
+    </div>
+</div>
+    </div>
+    <div class="container">
+        <h3>Aphorism of the Day</h3>
+        <div id="answer">
+            <!-- answer will be filled here by JS -->
+        </div>
+    </div>
+    <script>
+        let aphorism = [
+    'Actions speak louder than words.',
+    'All for one and one for all.',
+    "Don't fire until you see the whites of their eyes.",
+    "Early to bed, early to rise, makes a man healthy, wealthy, and wise.",
+    'Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.',
+    "Give him an inch and he'll take a mile.",
+    "He who fights and runs away, lives to fight another day.",
+    'He who hesitates is lost.',
+    'If you lie down with dogs, you wake up with fleas.',
+    'Laugh, and the world laughs with you; weep, and you weep alone.',
+    "You can fool some of the people all of the time, and all of the people some of the time, but you can't fool all of the people all of the time.",
+    "You can kill a man but you can't kill an idea.",
+    "You can take the boy out of the country, but you can't take the country out of the boy.",
+    'You made your bed, now lie in it.',
+    'You need to take a bull by the horns, and a man by his word.'
+]
+
+function getRandom(max) {
+    return Math.floor(Math.random() * max);
+}
+
+document.getElementById('answer').innerHTML = aphorism[getRandom(14)];
+    </script>
+</body>
+</html>
