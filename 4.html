@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSE - Miska Kytö</title>
+    <title>Exercise 4</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -18,14 +18,37 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-    <h2> OSE Assignments - Miska Kytö - Spring 2022</h2>
+    <h2> Exercise 4 </h2>
     <div class="btn-group" role="group">
-        <button class="btn btn-info btn-lg" onclick="window.location.href='1.html'">Exercise 1</button>
-        <button class="btn btn-info btn-lg" onclick="window.location.href='2.html'">Exercise 2</button>
-        <button class="btn btn-info btn-lg" onclick="window.location.href='3.html'">Exercise 3</button>
-        <button class="btn btn-info btn-lg" onclick="window.location.href='4.html'">Exercise 4</button>
+        <button class="btn btn-info btn-lg" onclick="window.location.href='index.html'" role="button">Back</button>
     </div>
 </div>
     </div>
+    <div class="container">
+        <h3>Lottery Numbers</h3>
+        <div id="answer">
+            <!-- answer will be filled here by JS -->
+        </div>
+    </div>
+    <script>
+// Create lottery number array
+let numbers = []
+let i = 0
+while(i<8) {
+    number = Math.floor(Math.random()*40)
+    if(numbers.indexOf(number) == -1){
+        numbers.push(number)
+        i++
+    }
+    else {
+        i--
+    }
+}
+
+numbers.sort(function(a,b){return a-b})
+numbers = numbers.join(' ')
+
+document.getElementById('answer').innerHTML = numbers;
+    </script>
 </body>
 </html>

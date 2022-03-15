@@ -40,7 +40,8 @@
           <div class="btn-group" role="group">
             <button class="btn btn-info" onclick="showAdults()">Show Adults</button>
             <button class="btn btn-info" onclick="showMinors()">Show Minors</button>
-            
+            <button class="btn btn-info" onclick="showOldest()">Show oldest member</button>
+            <button class="btn btn-info" onclick="showYoungest()">Show youngest member</button>
         </div>
         <div id="answer">
             <!-- answer will be filled here by JS -->
@@ -82,6 +83,32 @@ function showMinors() {
     for(i=0;i<namesMinor.length;i++){
         document.getElementById('answer').innerHTML += `${namesMinor[i]}, ${agesMinor[i]} years <br>`;
     }
+}
+
+function showOldest() {
+    document.getElementById('answer').innerHTML = "";
+    let oldestAge = agesAdult[0]
+    let oldestName = namesAdult[0]
+    for(var i=0; i<agesAdult.length;i++){
+        if (oldestAge < agesAdult[i]) {
+            oldestAge = agesAdult[i]
+            oldestName = namesAdult[i]
+        }
+    }
+    document.getElementById('answer').innerHTML += `${oldestName}, ${oldestAge} years <br>`;
+}
+
+function showYoungest() {
+    document.getElementById('answer').innerHTML = "";
+    let youngestAge = agesMinor[0]
+    let youngestName = namesMinor[0]
+    for(var i=0; i<agesMinor.length;i++){
+        if (youngestAge > agesMinor[i]) {
+            youngestAge = agesMinor[i]
+            youngestName = namesMinor[i]
+        }
+    }
+    document.getElementById('answer').innerHTML += `${youngestName}, ${youngestAge} years <br>`;
 }
 </script>
 </body>
